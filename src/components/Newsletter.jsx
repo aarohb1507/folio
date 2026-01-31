@@ -1,33 +1,77 @@
 import React, { useState } from 'react'
 
-export default function Newsletter(){
-  const [email, setEmail] = useState('')
+export default function Contact() {
+  const [result, setResult] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault()
-    // placeholder: integrate with mailing provider
-    console.log('subscribe', email)
-    setEmail('')
-    alert('Thanks — you are subscribed (demo)')
+    setIsSubmitting(true)
+    setResult('sending...')
+
+    const formData = new FormData(e.target)
+    formData.append('access_key', '535232a3-7147-492e-be29-f45aa152a841')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult('message sent! i\'ll get back to you soon.')
+        e.target.reset()
+        setTimeout(() => setResult(''), 4000)
+      } else {
+        setResult('error. please try again.')
+        setTimeout(() => setResult(''), 4000)
+      }
+    } catch (error) {
+      setResult('error. please try again.')
+      setTimeout(() => setResult(''), 4000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <section className="section" aria-labelledby="news-heading">
-      <h2 id="news-heading" className="heading-lg lowercase">stay updated</h2>
-      <p className="muted">subscribe to my email list</p>
+    <section className="section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" className="heading-lg lowercase">get in touch</h2>
+      <p className="muted">have a project or just want to chat? drop me a message</p>
 
-      <form className="newsletter-form" onSubmit={handleSubmit}>
+      <form className="contact-form" onSubmit={handleSubmit}>
         <input
-          aria-label="Email address"
+          className="input"
+          type="text"
+          name="name"
+          placeholder="your name"
+          required
+          disabled={isSubmitting}
+        />
+        <input
           className="input"
           type="email"
+          name="email"
+          placeholder="your.email@example.com"
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
+          disabled={isSubmitting}
         />
-        <button className="btn" type="submit">Subscribe</button>
+        <textarea
+          className="input textarea"
+          name="message"
+          placeholder="your message..."
+          rows="5"
+          required
+          disabled={isSubmitting}
+        />
+        <button className="btn" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'sending...' : 'send message'}
+        </button>
       </form>
+
+      {result && <p className="form-result">{result}</p>}
     </section>
   )
 }

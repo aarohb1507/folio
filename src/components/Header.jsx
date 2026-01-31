@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
-export default function Header({ name }){
+export default function Header({ name }) {
   const [age, setAge] = useState(0)
   const firstName = (name || '').split(' ')[0] || ''
 
   useEffect(() => {
-    function calculateAge(){
+    function calculateAge() {
       const birthDate = new Date('2003-07-15T11:48:00+05:30')
       const now = new Date()
       const diffMs = now - birthDate
@@ -22,7 +22,9 @@ export default function Header({ name }){
     <header className="site-header" aria-labelledby="main-heading">
       <h1 id="main-heading" className="heading-xl lowercase">{name}</h1>
       <p className="greeting">hi, {firstName.toLowerCase()} here</p>
-      <p className="muted">been here for {age.toFixed(9)} years</p>
+      <p className="muted">
+        been here for <span className="age-timer">{age.toFixed(9)}</span> years
+      </p>
     </header>
   )
 }

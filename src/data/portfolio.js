@@ -26,6 +26,8 @@ const portfolioData = {
       name: "SentinelRAG",
       logo: "S",
       url: "https://github.com/aarohb1507/sentinal-rag",
+      liveUrl: null,
+      image: "/images/sentinalrag.png",
       tech: "Node.js, Fastify, Python, PostgreSQL (pgvector), Redis, Docker",
       dates: "january 2026",
       description: "enterprise-grade RAG system with hybrid retrieval, LLM reranking, and sub-200ms latency"
@@ -34,6 +36,8 @@ const portfolioData = {
       name: "Invar",
       logo: "I",
       url: "https://github.com/aarohb1507/invar",
+      liveUrl: "https://outstanding-mersey-aarohb-507-d991d9a2.koyeb.app/",
+      image: "/images/invar.png",
       tech: "Node.js, Redis Streams, PostgreSQL, SSE",
       dates: "december 2025",
       description: "high-throughput metrics ingestion platform handling 10K+ events/min with 99.9% reliability"
@@ -42,6 +46,8 @@ const portfolioData = {
       name: "NexusFeed",
       logo: "N",
       url: "https://github.com/aarohb1507/nexusfeed",
+      liveUrl: null,
+      image: "/images/nexusfeed.png",
       tech: "Node.js, RabbitMQ, Redis, Docker, Nginx",
       dates: "november 2025",
       description: "scalable event-driven microservices backend with API Gateway, caching, and 99.8% uptime"
@@ -58,7 +64,7 @@ const portfolioData = {
   ],
   skills: ["javascript", "typescript", "sql", "python", "c++", "node.js", "nestjs", "fastify", "nextjs", "docker", "postgresql", "mongodb", "redis", "rabbitmq", "redis streams", "rag pipelines", "vector search", "llm orchestration"],
   social: {
-    twitter: "https://aarohb.com",
+    twitter: "https://x.com/aarohcodes",
     linkedin: "https://linkedin.com/in/aaroh-bhardwaj",
     github: "https://github.com/aarohb1507"
   }
