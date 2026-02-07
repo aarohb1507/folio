@@ -46,7 +46,7 @@ const portfolioData = {
       name: "NexusFeed",
       logo: "N",
       url: "https://github.com/aarohb1507/nexusfeed",
-      liveUrl: null,
+      liveUrl: "https://nexusfeed.vercel.app/",
       image: "/images/nexusfeed.png",
       tech: "Node.js, RabbitMQ, Redis, Docker, Nginx",
       dates: "november 2025",
