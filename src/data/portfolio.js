@@ -5,32 +5,16 @@ const portfolioData = {
   resumeUrl: "/Aaroh_s_resume_2026.pdf",
   contact: {
     location: "Bengaluru, Karnataka",
-    phone: "+91-7970932080",
-    email: "aarohb.1507@gmail.com",
-    website: "https://aarohb.com"
+    email: "aarohb.1507@gmail.com"
   },
   about: {
-    tldr: "backend and infrastructure engineer building distributed systems, scalable APIs, and production-grade GenAI stacks",
+    tldr: "backend focused full stack developer | genai infra",
     paragraphs: [
       "i focus on reliability, correctness, and observability in real-world deployments.",
       "i enjoy taking systems from architecture through production hardening and performance tuning."
     ],
     moreLink: "/things-i-believe"
   },
-  highlights: [
-    {
-      title: "10K+ events/min ingestion",
-      description: "built distributed metrics pipelines with Redis Streams, DLQs, and idempotent processors for high-load correctness."
-    },
-    {
-      title: "sub-200ms retrieval",
-      description: "implemented hybrid retrieval with reranking, semantic chunking, and caching to maintain low-latency RAG responses."
-    },
-    {
-      title: "40% faster dashboards",
-      description: "optimized APIs, caching, and database paths to cut dashboard latency and improve admin workflow speed."
-    }
-  ],
   experience: [
     {
       company: "Phyniks Dreamlabs LLP",

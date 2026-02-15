@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export default function Header({ name }) {
+export default function Header({ name, resumeUrl }) {
   const [age, setAge] = useState(0)
   const firstName = (name || '').split(' ')[0] || ''
 
@@ -25,6 +25,11 @@ export default function Header({ name }) {
       <p className="muted">
         been here for <span className="age-timer">{age.toFixed(9)}</span> years
       </p>
+      {resumeUrl && (
+        <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="header-resume-btn">
+          resume
+        </a>
+      )}
     </header>
   )
 }
