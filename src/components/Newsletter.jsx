@@ -37,7 +37,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="section" aria-labelledby="contact-heading">
+    <section id="contact" className="section" aria-labelledby="contact-heading">
       <h2 id="contact-heading" className="heading-lg lowercase">get in touch</h2>
       <p className="muted">have a project or just want to chat? drop me a message</p>
 

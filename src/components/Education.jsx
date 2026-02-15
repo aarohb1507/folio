@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Education({ items = [] }){
   return (
-    <section className="section" aria-labelledby="edu-heading">
+    <section id="education" className="section" aria-labelledby="edu-heading">
       <h2 id="edu-heading" className="heading-lg lowercase">education</h2>
       <div className="cards-list">
         {items.map((it, idx) => (

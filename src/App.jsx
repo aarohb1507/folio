@@ -10,6 +10,8 @@ import Newsletter from './components/Newsletter'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
+import ResumeHighlights from './components/ResumeHighlights'
+import BottomDock from './components/BottomDock'
 
 export default function App(){
   const [isDark, setIsDark] = useState(true)
@@ -36,7 +38,8 @@ export default function App(){
         <Avatar initials={portfolioData.initials} />
 
         <main>
-          <About about={portfolioData.about} />
+          <About about={portfolioData.about} contact={portfolioData.contact} />
+          <ResumeHighlights items={portfolioData.highlights} />
           <Experience items={portfolioData.experience} />
           <Projects items={portfolioData.projects} />
           <Education items={portfolioData.education} />
@@ -46,6 +49,7 @@ export default function App(){
 
         <Footer social={portfolioData.social} />
       </div>
+      <BottomDock social={portfolioData.social} resumeUrl={portfolioData.resumeUrl} />
     </div>
   )
 }

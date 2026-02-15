@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Projects({ items = [] }) {
   return (
-    <section className="section" aria-labelledby="proj-heading">
+    <section id="projects" className="section" aria-labelledby="proj-heading">
       <h2 id="proj-heading" className="heading-lg lowercase">projects</h2>
 
       <div className="projects-list">

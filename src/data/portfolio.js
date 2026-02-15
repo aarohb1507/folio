@@ -2,23 +2,44 @@ const portfolioData = {
   name: "Aaroh Bhardwaj",
   initials: "AB",
   startYear: 2022,
+  resumeUrl: "/Aaroh_s_resume_2026.pdf",
+  contact: {
+    location: "Bengaluru, Karnataka",
+    phone: "+91-7970932080",
+    email: "aarohb.1507@gmail.com",
+    website: "https://aarohb.com"
+  },
   about: {
-    tldr: "backend-focused engineer building high-throughput distributed systems and production GenAI infrastructure",
+    tldr: "backend and infrastructure engineer building distributed systems, scalable APIs, and production-grade GenAI stacks",
     paragraphs: [
-      "i specialize in scalable, reliable backend systems with strong emphasis on observability and performance.",
-      "i enjoy working close to the infrastructure, taking features from idea to production."
+      "i focus on reliability, correctness, and observability in real-world deployments.",
+      "i enjoy taking systems from architecture through production hardening and performance tuning."
     ],
     moreLink: "/things-i-believe"
   },
+  highlights: [
+    {
+      title: "10K+ events/min ingestion",
+      description: "built distributed metrics pipelines with Redis Streams, DLQs, and idempotent processors for high-load correctness."
+    },
+    {
+      title: "sub-200ms retrieval",
+      description: "implemented hybrid retrieval with reranking, semantic chunking, and caching to maintain low-latency RAG responses."
+    },
+    {
+      title: "40% faster dashboards",
+      description: "optimized APIs, caching, and database paths to cut dashboard latency and improve admin workflow speed."
+    }
+  ],
   experience: [
     {
       company: "Phyniks Dreamlabs LLP",
       logo: "P",
       url: "https://phyniks.com",
-      role: "software development engineer intern",
+      role: "full stack developer intern",
       type: "internship",
-      dates: "august 2025 - present",
-      description: "designed scalable Node.js APIs with RBAC, JWT, and rate limiting; optimized PostgreSQL queries reducing latency by 40%; built Next.js dashboards"
+      dates: "september 2025 - present",
+      description: "built scalable NestJS backends with DTO validation, guards, query optimization, and Redis caching; developed SSR Next.js admin dashboards with sub-200ms TTFB"
     }
   ],
   projects: [
@@ -57,8 +78,8 @@ const portfolioData = {
     {
       institution: "Acharya Institute of Technology",
       logo: "A",
-      years: "november 2022 - june 2026",
-      field: "B.E. Computer Science",
+      years: "2022 - 2026 (expected)",
+      field: "B.E. Computer Science & Software Engineering",
       url: "https://linkedin.com/in/aaroh-bhardwaj"
     }
   ],
