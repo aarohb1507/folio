@@ -2,7 +2,7 @@ const portfolioData = {
   name: "Aaroh Bhardwaj",
   initials: "AB",
   startYear: 2022,
-  resumeUrl: "/Aaroh_s_resume_2026.pdf",
+  resumeUrl: "/Aaroh_s_resume.pdf",
   contact: {
     location: "Bengaluru, Karnataka",
     email: "aarohb.1507@gmail.com"
