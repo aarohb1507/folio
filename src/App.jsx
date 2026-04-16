@@ -11,7 +11,7 @@ import Skills from './components/Skills'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
 
-const SCROLL_SLOWDOWN = 1.15
+const SCROLL_SPEED_MULTIPLIER = 0.92
 
 export default function App(){
   const [isDark, setIsDark] = useState(true)
@@ -33,16 +33,6 @@ export default function App(){
     if (reducedMotion.matches) {
       return undefined
     }
-
-    let currentY = window.scrollY
-    let targetY = currentY
-    let frameId = 0
-
-    const getMaxScroll = () => (
-      document.documentElement.scrollHeight - window.innerHeight
-    )
-
-    const clampScroll = (value) => Math.max(0, Math.min(value, getMaxScroll()))
 
     const normalizeDelta = (event) => {
       if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) {
@@ -84,21 +74,6 @@ export default function App(){
       return false
     }
 
-    const animateScroll = () => {
-      const distance = targetY - currentY
-
-      if (Math.abs(distance) < 0.5) {
-        window.scrollTo(0, targetY)
-        currentY = targetY
-        frameId = 0
-        return
-      }
-
-      currentY += distance * 0.16
-      window.scrollTo(0, currentY)
-      frameId = window.requestAnimationFrame(animateScroll)
-    }
-
     const handleWheel = (event) => {
       if (event.ctrlKey || event.metaKey || event.shiftKey) {
         return
@@ -110,43 +85,17 @@ export default function App(){
       }
 
       event.preventDefault()
-
-      if (!frameId) {
-        currentY = window.scrollY
-        targetY = currentY
-      }
-
-      targetY = clampScroll(targetY + deltaY / SCROLL_SLOWDOWN)
-
-      if (!frameId) {
-        frameId = window.requestAnimationFrame(animateScroll)
-      }
-    }
-
-    const syncNativeScroll = () => {
-      if (!frameId) {
-        currentY = window.scrollY
-        targetY = currentY
-      }
-    }
-
-    const syncBounds = () => {
-      targetY = clampScroll(targetY)
-      currentY = clampScroll(currentY)
+      window.scrollBy({
+        top: deltaY * SCROLL_SPEED_MULTIPLIER,
+        left: 0,
+        behavior: 'auto'
+      })
     }
 
     window.addEventListener('wheel', handleWheel, { passive: false })
-    window.addEventListener('scroll', syncNativeScroll, { passive: true })
-    window.addEventListener('resize', syncBounds, { passive: true })
 
     return () => {
       window.removeEventListener('wheel', handleWheel)
-      window.removeEventListener('scroll', syncNativeScroll)
-      window.removeEventListener('resize', syncBounds)
-
-      if (frameId) {
-        window.cancelAnimationFrame(frameId)
-      }
     }
   }, [])
 
