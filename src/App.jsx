@@ -11,8 +11,6 @@ import Skills from './components/Skills'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
 
-const SCROLL_SPEED_MULTIPLIER = 0.92
-
 export default function App(){
   const [isDark, setIsDark] = useState(true)
 
@@ -27,77 +25,6 @@ export default function App(){
     document.documentElement.classList.toggle('light-mode', !isDark)
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])
-
-  useEffect(() => {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (reducedMotion.matches) {
-      return undefined
-    }
-
-    const normalizeDelta = (event) => {
-      if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) {
-        return event.deltaY * 16
-      }
-
-      if (event.deltaMode === WheelEvent.DOM_DELTA_PAGE) {
-        return event.deltaY * window.innerHeight
-      }
-
-      return event.deltaY
-    }
-
-    const hasScrollableParent = (startNode, deltaY) => {
-      let node = startNode
-
-      while (node && node !== document.body && node !== document.documentElement) {
-        if (!(node instanceof HTMLElement)) {
-          node = node.parentElement
-          continue
-        }
-
-        const { overflowY } = window.getComputedStyle(node)
-        const canScroll = /(auto|scroll|overlay)/.test(overflowY) && node.scrollHeight > node.clientHeight
-
-        if (canScroll) {
-          const atTop = node.scrollTop <= 0
-          const atBottom = node.scrollTop + node.clientHeight >= node.scrollHeight - 1
-          const canScrollDirection = deltaY < 0 ? !atTop : !atBottom
-
-          if (canScrollDirection) {
-            return true
-          }
-        }
-
-        node = node.parentElement
-      }
-
-      return false
-    }
-
-    const handleWheel = (event) => {
-      if (event.ctrlKey || event.metaKey || event.shiftKey) {
-        return
-      }
-
-      const deltaY = normalizeDelta(event)
-      if (!deltaY || hasScrollableParent(event.target, deltaY)) {
-        return
-      }
-
-      event.preventDefault()
-      window.scrollBy({
-        top: deltaY * SCROLL_SPEED_MULTIPLIER,
-        left: 0,
-        behavior: 'auto'
-      })
-    }
-
-    window.addEventListener('wheel', handleWheel, { passive: false })
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel)
-    }
-  }, [])
 
   const toggleTheme = () => setIsDark(!isDark)
 
