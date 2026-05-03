@@ -28,16 +28,6 @@ const portfolioData = {
   ],
   projects: [
     {
-      name: "SentinelRAG",
-      logo: "S",
-      url: "https://github.com/aarohb1507/sentinal-rag",
-      liveUrl: "https://sentinal-web-711220270423.asia-south1.run.app/",
-      image: "/images/sentinalrag.png",
-      tech: "Node.js, Fastify, Python, PostgreSQL (pgvector), Redis, Docker",
-      dates: "january 2026",
-      description: "enterprise-grade RAG system with hybrid retrieval, LLM reranking, and sub-200ms latency, featuring semantic chunking, Redis caching, and full per-stage observability"
-    },
-    {
       name: "Invar",
       logo: "I",
       url: "https://github.com/aarohb1507/invar",
@@ -46,6 +36,16 @@ const portfolioData = {
       tech: "Node.js, Redis Streams, PostgreSQL, SSE",
       dates: "december 2025",
       description: "high-throughput metrics ingestion platform handling 10K+ events/min with 99.9% reliability, featuring decoupled hot/cold storage paths and real-time SSE delivery"
+    },
+    {
+      name: "SentinelRAG",
+      logo: "S",
+      url: "https://github.com/aarohb1507/sentinal-rag",
+      liveUrl: "https://sentinal-web-711220270423.asia-south1.run.app/",
+      image: "/images/sentinalrag.png",
+      tech: "Node.js, Fastify, Python, PostgreSQL (pgvector), Redis, Docker",
+      dates: "january 2026",
+      description: "enterprise-grade RAG system with hybrid retrieval, LLM reranking, and sub-200ms latency, featuring semantic chunking, Redis caching, and full per-stage observability"
     },
     {
       name: "NexusFeed",
