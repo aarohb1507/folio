@@ -35,7 +35,7 @@ const portfolioData = {
       image: "/images/invar.png",
       tech: "Node.js, Redis Streams, PostgreSQL, SSE",
       dates: "december 2025",
-      description: "high-throughput metrics ingestion platform handling 10K+ events/min with 99.9% reliability, featuring decoupled hot/cold storage paths and real-time SSE delivery"
+      description: "high-throughput metrics ingestion platform handling 5k+ events/min with 90% reliability, featuring decoupled hot/cold storage paths and real-time SSE delivery"
     },
     {
       name: "SentinelRAG",
