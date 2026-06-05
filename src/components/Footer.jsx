@@ -1,4 +1,5 @@
 import React from 'react'
+import VisitorCounter from './VisitorCounter'
 
 export default function Footer({ social = {} }){
   return (
@@ -8,6 +9,7 @@ export default function Footer({ social = {} }){
         <div>say hello on <a href={social.linkedin} target="_blank" rel="noopener noreferrer">linkedin</a></div>
         <div>say hello on <a href={social.github} target="_blank" rel="noopener noreferrer">github</a></div>
       </div>
+      <VisitorCounter />
     </footer>
   )
 }
