@@ -17,6 +17,14 @@ const portfolioData = {
   },
   experience: [
     {
+      company: "Growify Digital",
+      logo: "G",
+      role: "AI Engineer Intern",
+      type: "internship",
+      dates: "august 2026 - present",
+      description: "built a NestJS + MongoDB analytics platform replacing Funnel.io and Power BI — Shopify and Meta Ads connectors, OAuth with HMAC-verified webhooks, and a rate-limit-aware sync pipeline serving a partner ROAS integration"
+    },
+    {
       company: "Phyniks Dreamlabs LLP",
       logo: "P",
       url: "https://phyniks.com",
@@ -27,6 +35,15 @@ const portfolioData = {
     }
   ],
   projects: [
+    {
+      name: "Loop",
+      logo: "L",
+      url: "#",
+      image: "/images/invar.png",
+      tech: "NestJS, Next.js, MongoDB, Mongoose, Shopify Admin API, Meta Marketing API",
+      dates: "august 2026",
+      description: "internal analytics platform unifying Shopify and Meta Ads data for a marketing agency — diagnosed Meta's CPU-based rate limiting from its own usage headers, rebuilt the sync as per-entity batched requests, and cut a stalled, failing monthly migration down to 6 minutes per month while shrinking stored data 18x through correct-grain aggregation"
+    },
     {
       name: "Invar",
       logo: "I",
