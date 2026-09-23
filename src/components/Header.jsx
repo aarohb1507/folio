@@ -20,9 +20,9 @@ export default function Header({ name, resumeUrl, contact, isDark, toggleTheme }
 
       <div className="hero-grid">
         <div className="header-copy">
-          <p className="eyebrow">backend engineering / genai infrastructure</p>
+          <p className="eyebrow">backend systems / ai engineering</p>
           <h1 id="main-heading" className="heading-xl lowercase">{name}</h1>
-          <p className="hero-intro">hi, {firstName.toLowerCase()} here — i build reliable systems for products that have to work.</p>
+          <p className="hero-intro">hi, {firstName.toLowerCase()} here — i design APIs, data pipelines, and ai-backed systems that stay fast when real users show up.</p>
           <div className="hero-links">
             {resumeUrl && (
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="text-link">
@@ -40,7 +40,7 @@ export default function Header({ name, resumeUrl, contact, isDark, toggleTheme }
         <aside className="hero-note" aria-label="Current role">
           <p className="eyebrow">currently</p>
           <p className="hero-note-title">ai engineer intern<br />at growify digital</p>
-          <p className="hero-note-meta">{contact?.location}</p>
+          <p className="hero-note-meta">NestJS / MongoDB / marketing analytics<br />{contact?.location}</p>
         </aside>
       </div>
     </header>

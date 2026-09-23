@@ -7,12 +7,13 @@ export default function ExperienceCard({ item }) {
       <article className="experience-content">
         <header className="experience-header">
           <div>
+            <p className="experience-role">{item.role}</p>
             {item.url ? (
               <a className="experience-company" href={item.url} target="_blank" rel="noopener noreferrer">
                 {item.company} <span aria-hidden="true">↗</span>
               </a>
             ) : <h3 className="experience-company">{item.company}</h3>}
-            <p className="experience-role">{item.role} <span>/</span> {item.type}</p>
+            <p className="experience-type">{item.type}</p>
           </div>
           <time className="experience-dates">{item.dates}</time>
         </header>

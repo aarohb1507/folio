@@ -8,10 +8,10 @@ const portfolioData = {
     email: "aarohb.1507@gmail.com"
   },
   about: {
-    tldr: "backend focused full stack developer | genai infra",
+    tldr: "backend systems engineer | ai infrastructure",
     paragraphs: [
-      "i focus on reliability, correctness, and observability in real-world deployments.",
-      "i enjoy taking systems from architecture through production hardening and performance tuning."
+      "i work closest to the parts of a product where data, latency, and correctness meet.",
+      "i enjoy taking systems from architecture through production hardening, then measuring whether the decisions actually held up."
     ],
     moreLink: "/things-i-believe"
   },

@@ -7,8 +7,8 @@ export default function Experience({ items = [] }) {
       <div className="section-heading">
         <div className="section-label"><span>02</span> experience</div>
         <div>
-          <h2 id="exp-heading" className="section-title">places i&apos;ve helped build.</h2>
-          <p className="section-intro">product-minded engineering, from first architecture to production hardening.</p>
+          <h2 id="exp-heading" className="section-title">engineering roles.</h2>
+          <p className="section-intro">internship work shaped around backend systems, production data, and measurable performance wins.</p>
         </div>
       </div>
       <ol className="experience-list">

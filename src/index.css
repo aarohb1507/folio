@@ -8,6 +8,7 @@
   --line: rgba(243, 240, 233, 0.15);
   --line-strong: rgba(243, 240, 233, 0.35);
   --accent: #d7ff70;
+  --accent-2: #70d6ff;
   --focus: #d7ff70;
 }
 
@@ -21,6 +22,7 @@
   --line: rgba(28, 28, 26, 0.14);
   --line-strong: rgba(28, 28, 26, 0.34);
   --accent: #7cae16;
+  --accent-2: #087da1;
   --focus: #567e09;
 }
 
@@ -66,7 +68,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
   font-size: 1.45rem;
   font-weight: 700;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   text-decoration: none;
 }
 
@@ -132,13 +134,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin: 0;
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
   font-weight: 500;
-  letter-spacing: -0.065em;
+  letter-spacing: 0;
 }
 
 .heading-xl {
   max-width: 850px;
   margin-top: 0.7rem;
-  font-size: clamp(4rem, 10.2vw, 8.8rem);
+  font-size: 7.6rem;
   line-height: 0.86;
 }
 
@@ -146,7 +148,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   max-width: 510px;
   margin: 1.9rem 0 0;
   color: var(--ink-soft);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -170,7 +172,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-top: 1px solid var(--line-strong);
 }
 
-.hero-note-title { margin: 0.75rem 0 0; color: var(--ink); font-size: 0.93rem; font-weight: 650; line-height: 1.45; }
+.hero-note-title { margin: 0.75rem 0 0; color: var(--ink); font-size: 1.35rem; font-weight: 760; letter-spacing: 0; line-height: 1.15; }
 .hero-note-meta { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.79rem; line-height: 1.45; }
 
 .section { padding: clamp(4.5rem, 9vw, 8rem) 0; border-top: 1px solid var(--line); }
@@ -187,26 +189,40 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .section-heading { margin-bottom: 3.25rem; }
 .compact-heading { align-items: end; margin-bottom: 2.4rem; }
 
-.section-title { font-size: clamp(2.35rem, 5.2vw, 4.3rem); line-height: 0.95; }
+.section-title { font-size: 3.65rem; line-height: 0.95; }
 .section-intro { max-width: 460px; margin: 1rem 0 0; color: var(--ink-soft); font-size: 0.98rem; line-height: 1.65; }
 
 .about-layout { align-items: start; }
 .about-body { max-width: 610px; }
 .about-body p { margin: 0 0 1rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.72; }
-.about-body .about-lead { color: var(--ink); font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.45; }
+.about-body .about-lead { color: var(--ink); font-size: 1.4rem; line-height: 1.45; }
 .about-body .text-link { margin-top: 0.4rem; }
 
 .experience-list { padding: 0; margin: 0; list-style: none; border-top: 1px solid var(--line); }
 
 .experience-card {
+  position: relative;
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
   gap: 1.3rem;
-  padding: 2rem 0;
+  padding: 2.25rem 0;
   border-bottom: 1px solid var(--line);
 }
 
+.experience-card::before {
+  position: absolute;
+  top: 2.35rem;
+  bottom: 2.25rem;
+  left: 18px;
+  width: 1px;
+  background: linear-gradient(var(--accent), transparent);
+  opacity: 0.38;
+  content: "";
+}
+
 .experience-stamp, .education-mark {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: 38px;
   height: 38px;
@@ -219,21 +235,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .experience-header { display: flex; justify-content: space-between; gap: 1.75rem; }
-.experience-company { display: inline-block; margin: 0; color: var(--ink); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.035em; text-decoration: none; }
+.experience-company { display: inline-block; margin: 0.45rem 0 0; color: var(--ink-soft); font-size: 1rem; font-weight: 700; letter-spacing: 0; text-decoration: none; }
 a.experience-company:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
 .experience-company span { color: var(--accent); font-size: 0.9rem; }
-.experience-role { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.79rem; }
-.experience-role span { color: var(--accent); padding: 0 0.2rem; }
+.experience-role { margin: 0; color: var(--ink); font-size: 3rem; font-weight: 800; letter-spacing: 0; line-height: 0.92; }
+.experience-type { display: inline-flex; align-items: center; gap: 0.45rem; margin: 0.55rem 0 0; color: var(--accent-2); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.experience-type::before { width: 0.45rem; height: 0.45rem; border: 1px solid currentColor; border-radius: 50%; content: ""; }
 .experience-dates { flex: 0 0 auto; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 
-.initiative { max-width: 590px; margin-top: 1.35rem; padding: 0.75rem 0 0.75rem 1rem; border-left: 2px solid var(--accent); background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent); }
+.initiative { max-width: 680px; margin-top: 1.35rem; padding: 0.8rem 0 0.8rem 1rem; border-left: 2px solid var(--accent); background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent); }
 .initiative-label { margin: 0 0 0.35rem; color: var(--accent); }
 .initiative p:last-child { margin: 0; color: var(--ink-soft); font-size: 0.87rem; line-height: 1.55; }
 .initiative strong { color: var(--ink); font-weight: 700; }
 
-.experience-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem 2rem; max-width: 780px; padding: 0; margin: 1.5rem 0 0; list-style: none; }
-.experience-highlights li { position: relative; padding-left: 1rem; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.55; }
-.experience-highlights li::before { position: absolute; left: 0; top: 0.54rem; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); content: ""; }
+.experience-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem 2.25rem; max-width: 860px; padding: 0; margin: 1.6rem 0 0; list-style: none; counter-reset: highlight; }
+.experience-highlights li { position: relative; padding-left: 1.65rem; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.58; counter-increment: highlight; }
+.experience-highlights li::before { position: absolute; left: 0; top: 0.1rem; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.68rem; font-weight: 800; content: "0" counter(highlight); }
 .experience-description { margin: 1.25rem 0 0; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; }
 
 .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
@@ -245,7 +262,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .project-content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding-top: 1rem; }
 .project-meta { display: flex; width: 100%; justify-content: space-between; gap: 1rem; }
 .project-meta span { color: var(--accent); }
-.project-title { margin: 0.7rem 0 0; font-family: ui-serif, Georgia, serif; font-size: 1.65rem; font-weight: 500; letter-spacing: -0.045em; }
+.project-title { margin: 0.7rem 0 0; font-family: ui-serif, Georgia, serif; font-size: 1.65rem; font-weight: 500; letter-spacing: 0; }
 .project-description { margin: 0.65rem 0 0; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.6; }
 .project-tech { margin: 1rem 0 0; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.69rem; line-height: 1.6; }
 .project-actions { gap: 1rem; margin-top: auto; padding-top: 1.2rem; }
@@ -253,7 +270,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .education-list { border-top: 1px solid var(--line); }
 .education-item { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: 1.3rem; align-items: center; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
 .education-item h3, .education-item p { margin: 0; }
-.education-item h3 { font-size: 1rem; letter-spacing: -0.025em; }
+.education-item h3 { font-size: 1rem; letter-spacing: 0; }
 .education-item h3 a { text-decoration: none; }
 .education-item h3 a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
 .education-item h3 span { color: var(--accent); font-size: 0.78rem; }
@@ -272,7 +289,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .contact-section { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr); gap: clamp(2.5rem, 7vw, 7rem); margin: clamp(4.5rem, 10vw, 8rem) 0 0; padding: clamp(2rem, 6vw, 4.5rem); background: var(--ink); color: var(--canvas); }
 .contact-section .section-label { color: color-mix(in srgb, var(--canvas) 64%, transparent); }
 .contact-section .section-label span, .contact-section .btn span { color: var(--accent); }
-.contact-title { margin-top: 1rem; font-size: clamp(2.7rem, 5vw, 4.6rem); line-height: 0.91; }
+.contact-title { margin-top: 1rem; font-size: 4rem; line-height: 0.91; }
 .contact-copy > p:last-child { max-width: 380px; margin: 1.4rem 0 0; color: color-mix(in srgb, var(--canvas) 74%, transparent); font-size: 0.92rem; line-height: 1.65; }
 .contact-form { display: flex; flex-direction: column; gap: 1.15rem; }
 .contact-form label { display: flex; flex-direction: column; gap: 0.45rem; color: color-mix(in srgb, var(--canvas) 68%, transparent); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -302,7 +319,10 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .site-root { padding: 0 1rem; }
   .topbar { min-height: 65px; }
   .site-nav { display: none; }
-  .heading-xl { font-size: clamp(3.4rem, 17vw, 5rem); }
+  .heading-xl { font-size: 4.2rem; }
+  .section-title { font-size: 2.65rem; }
+  .contact-title { font-size: 3rem; }
+  .experience-role { font-size: 2.15rem; }
   .hero-grid { gap: 2.25rem; padding-top: 5.5rem; }
   .section-heading, .about-layout { grid-template-columns: 1fr; gap: 1.1rem; }
   .section-heading { margin-bottom: 2.25rem; }
