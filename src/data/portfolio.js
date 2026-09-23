@@ -19,7 +19,7 @@ const portfolioData = {
     {
       company: "Growify Digital",
       logo: "G",
-      role: "backend developer intern",
+      role: "AI Engineer Intern",
       type: "internship",
       dates: "august 2026 - present",
       description: "built a NestJS + MongoDB analytics platform replacing Funnel.io and Power BI — Shopify and Meta Ads connectors, OAuth with HMAC-verified webhooks, and a rate-limit-aware sync pipeline serving a partner ROAS integration"
