@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import portfolioData from './data/portfolio'
 import Header from './components/Header'
-import Avatar from './components/Avatar'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -9,7 +8,6 @@ import Education from './components/Education'
 import Newsletter from './components/Newsletter'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
-import ThemeToggle from './components/ThemeToggle'
 
 export default function App(){
   const [isDark, setIsDark] = useState(true)
@@ -29,15 +27,15 @@ export default function App(){
   const toggleTheme = () => setIsDark(!isDark)
 
   return (
-    <div className="site-root">
-      <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
+    <div id="top" className="site-root">
       <div className="container">
         <Header
           name={portfolioData.name}
-          startYear={portfolioData.startYear}
           resumeUrl={portfolioData.resumeUrl}
+          contact={portfolioData.contact}
+          isDark={isDark}
+          toggleTheme={toggleTheme}
         />
-        <Avatar initials={portfolioData.initials} />
 
         <main>
           <About about={portfolioData.about} />

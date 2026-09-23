@@ -17,13 +17,34 @@ const portfolioData = {
   },
   experience: [
     {
+      company: "Growify Digital",
+      logo: "G",
+      role: "ai engineer intern",
+      type: "internship",
+      dates: "august 2026 - present",
+      highlights: [
+        "built a NestJS + MongoDB analytics platform replacing Funnel.io and Power BI, unifying Shopify and Meta Ads data",
+        "diagnosed Meta's CPU-based rate limiting from usage headers and rebuilt syncs as per-entity batched requests",
+        "cut a failing monthly migration to 6 minutes per month and reduced stored data 18x through correct-grain aggregation",
+        "delivered OAuth, HMAC-verified webhooks, and a rate-limit-aware pipeline supporting partner ROAS reporting"
+      ],
+      initiative: {
+        name: "Loop",
+        label: "internal analytics platform",
+        description: "Shopify and Meta Ads reporting for a partner ROAS workflow"
+      }
+    },
+    {
       company: "Phyniks Dreamlabs LLP",
       logo: "P",
       url: "https://phyniks.com",
       role: "full stack developer intern",
       type: "internship",
-      dates: "september 2025 - present",
-      description: "built scalable NestJS backends with DTO validation, guards, query optimization, and Redis caching; developed SSR Next.js admin dashboards with sub-200ms TTFB"
+      dates: "september 2025 - january 2026",
+      highlights: [
+        "built scalable NestJS backends with DTO validation, guards, query optimization, and Redis caching",
+        "developed SSR Next.js admin dashboards with sub-200ms TTFB"
+      ]
     }
   ],
   projects: [
@@ -67,7 +88,7 @@ const portfolioData = {
       url: "https://linkedin.com/in/aaroh-bhardwaj"
     }
   ],
-  skills: ["javascript", "typescript", "sql", "python", "c++", "node.js", "nestjs", "fastify", "nextjs", "docker", "postgresql", "mongodb", "redis", "rabbitmq", "redis streams", "rag pipelines", "vector search", "llm orchestration"],
+  skills: ["javascript", "typescript", "sql", "python", "go", "node.js", "nestjs", "fastify", "nextjs", "docker", "postgresql", "mongodb", "redis", "rabbitmq", "redis streams", "rag pipelines", "vector search", "llm orchestration"],
   social: {
     twitter: "https://x.com/aarohcodes",
     linkedin: "https://linkedin.com/in/aaroh-bhardwaj",

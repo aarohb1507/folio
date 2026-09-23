@@ -1,20 +1,35 @@
 import React from 'react'
 
-export default function ExperienceCard({ item }){
+export default function ExperienceCard({ item }) {
   return (
-    <a className="card" href={item.url} target="_blank" rel="noopener noreferrer">
-      <div className="card-left">
-        <div className="logo-box" aria-hidden>
-          {item.logo}
-        </div>
-      </div>
+    <li className="experience-card">
+      <div className="experience-stamp" aria-hidden="true">{item.logo}</div>
+      <article className="experience-content">
+        <header className="experience-header">
+          <div>
+            {item.url ? (
+              <a className="experience-company" href={item.url} target="_blank" rel="noopener noreferrer">
+                {item.company} <span aria-hidden="true">↗</span>
+              </a>
+            ) : <h3 className="experience-company">{item.company}</h3>}
+            <p className="experience-role">{item.role} <span>/</span> {item.type}</p>
+          </div>
+          <time className="experience-dates">{item.dates}</time>
+        </header>
 
-      <div className="card-right">
-        <div className="card-title">{item.company}</div>
-        <div className="card-meta">{item.dates}</div>
-        <div className="card-role">{item.role} | {item.type}</div>
-        <div className="card-desc">{item.description}</div>
-      </div>
-    </a>
+        {item.initiative && (
+          <div className="initiative">
+            <p className="initiative-label">{item.initiative.label}</p>
+            <p><strong>{item.initiative.name}</strong> — {item.initiative.description}</p>
+          </div>
+        )}
+
+        {item.highlights ? (
+          <ul className="experience-highlights">
+            {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+          </ul>
+        ) : <p className="experience-description">{item.description}</p>}
+      </article>
+    </li>
   )
 }
