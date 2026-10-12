@@ -209,6 +209,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border-bottom: 1px solid var(--line);
 }
 
+.experience-card-featured { background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 4%, transparent), transparent 58%); }
+
 .experience-card::before {
   position: absolute;
   top: 2.35rem;
@@ -247,6 +249,9 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .initiative-label { margin: 0 0 0.35rem; color: var(--accent); }
 .initiative p:last-child { margin: 0; color: var(--ink-soft); font-size: 0.87rem; line-height: 1.55; }
 .initiative strong { color: var(--ink); font-weight: 700; }
+.initiative-link { display: inline-flex; gap: 0.35rem; margin-top: 0.8rem; color: var(--ink); font-size: 0.76rem; font-weight: 750; text-decoration: none; }
+.initiative-link span { color: var(--accent); transition: transform 160ms ease; }
+.initiative-link:hover span { transform: translateX(3px); }
 
 .experience-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem 2.25rem; max-width: 860px; padding: 0; margin: 1.6rem 0 0; list-style: none; counter-reset: highlight; }
 .experience-highlights li { position: relative; padding-left: 1.65rem; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.58; counter-increment: highlight; }
@@ -308,11 +313,53 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .footer-links a:hover { color: var(--ink); }
 .footer-links span { color: var(--accent); }
 
+.loop-header { padding-bottom: 1rem; }
+.loop-back { color: var(--muted); font-size: 0.72rem; text-decoration: none; }
+.loop-back:hover { color: var(--ink); }
+.loop-back span { color: var(--accent); }
+.loop-hero { padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 8vw, 7rem); }
+.loop-title { margin: 0.65rem 0 0; font-family: ui-serif, Georgia, serif; font-size: clamp(5rem, 14vw, 10rem); font-weight: 500; letter-spacing: -0.06em; line-height: 0.78; }
+.loop-lede { max-width: 620px; margin: 2.2rem 0 0; color: var(--ink-soft); font-size: clamp(1.1rem, 2vw, 1.45rem); line-height: 1.5; }
+.loop-numbers { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-top: 4.5rem; border-top: 1px solid var(--line-strong); }
+.loop-number { min-width: 0; padding-top: 1rem; }
+.loop-number strong { display: block; color: var(--accent); font-family: ui-serif, Georgia, serif; font-size: clamp(1.8rem, 3.3vw, 3rem); font-weight: 500; line-height: 1; }
+.loop-number span { display: block; max-width: 115px; margin-top: 0.55rem; color: var(--muted); font-size: 0.68rem; line-height: 1.35; }
+.loop-section { display: grid; grid-template-columns: minmax(135px, 0.25fr) minmax(0, 0.75fr); gap: 2rem; padding: clamp(3.75rem, 8vw, 6.5rem) 0; border-top: 1px solid var(--line); }
+.loop-section-label { color: var(--accent); font-size: 0.67rem; font-weight: 700; letter-spacing: 0.11em; line-height: 1.25; text-transform: uppercase; }
+.loop-copy { max-width: 660px; }
+.loop-copy p { margin: 0 0 1.1rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.72; }
+.loop-copy p:last-child { margin-bottom: 0; }
+.loop-copy h2 { margin: 0 0 1.25rem; font-family: ui-serif, Georgia, serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 0.95; }
+.loop-copy code { color: var(--ink); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; }
+.loop-diagram { overflow: hidden; width: 100%; border: 1px solid var(--line); background: var(--surface); }
+.loop-diagram svg { display: block; width: 100%; height: auto; }
+.diagram-label { fill: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.diagram-source rect, .diagram-product rect { fill: var(--surface-raised); stroke: var(--line-strong); }
+.diagram-source text, .diagram-product text { fill: var(--ink-soft); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; text-anchor: middle; }
+.diagram-box { fill: color-mix(in srgb, var(--accent) 10%, var(--surface)); stroke: var(--accent); }
+.diagram-box-title { fill: var(--ink); font-family: ui-serif, Georgia, serif; font-size: 18px; text-anchor: middle; }
+.diagram-box-sub { fill: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9px; text-anchor: middle; }
+.diagram-line { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.diagram-line marker path { fill: var(--accent); }
+.diagram-next { stroke: var(--accent-2) !important; stroke-dasharray: 5 4; }
+.problem-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--line); background: var(--line); }
+.problem-card { min-width: 0; padding: 1.35rem; background: var(--canvas); }
+.problem-card:last-child { grid-column: span 2; }
+.problem-index { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.68rem; font-weight: 800; }
+.problem-card h2 { margin: 1.4rem 0 1rem; font-family: ui-serif, Georgia, serif; font-size: 1.5rem; font-weight: 500; line-height: 1; }
+.problem-card p { margin: 0.65rem 0 0; color: var(--ink-soft); font-size: 0.84rem; line-height: 1.6; }
+.problem-card b { color: var(--ink); font-size: 0.67rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.problem-card .problem-result { color: var(--ink); }
+.loop-next { padding-bottom: 3rem; }
+.loop-stack { max-width: 900px; padding: 1.25rem 0 3rem; margin: 0; border-top: 1px solid var(--line); color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.7rem; line-height: 1.7; }
+.loop-stack span { margin-right: 0.8rem; color: var(--accent); font-weight: 800; text-transform: uppercase; }
+
 @media (max-width: 820px) {
   .hero-grid, .contact-section { grid-template-columns: 1fr; }
   .hero-note { max-width: 340px; }
   .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-section { gap: 3rem; }
+  .loop-numbers { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
 }
 
 @media (max-width: 640px) {
@@ -336,6 +383,12 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .education-item time { grid-column: 2; }
   .contact-section { margin-left: -1rem; margin-right: -1rem; padding: 2.75rem 1rem; }
   .site-footer { flex-direction: column; padding-bottom: 1rem; }
+  .loop-back { display: none; }
+  .loop-hero { padding-top: 4rem; }
+  .loop-numbers { grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
+  .loop-section { grid-template-columns: 1fr; gap: 1.1rem; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .problem-card:last-child { grid-column: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {

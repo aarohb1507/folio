@@ -11,7 +11,7 @@ const portfolioData = {
     tldr: "backend systems engineer | ai infrastructure",
     paragraphs: [
       "i work closest to the parts of a product where data, latency, and correctness meet.",
-      "i enjoy taking systems from architecture through production hardening, then measuring whether the decisions actually held up."
+      "i enjoy taking production data platforms from architecture through hardening, then measuring whether the decisions actually held up."
     ],
     moreLink: "/things-i-believe"
   },
@@ -23,15 +23,18 @@ const portfolioData = {
       type: "internship",
       dates: "august 2026 - present",
       highlights: [
-        "built a NestJS + MongoDB analytics platform replacing Funnel.io and Power BI, unifying Shopify and Meta Ads data",
-        "diagnosed Meta's CPU-based rate limiting from usage headers and rebuilt syncs as per-entity batched requests",
-        "cut a failing monthly migration to 6 minutes per month and reduced stored data 18x through correct-grain aggregation",
-        "delivered OAuth, HMAC-verified webhooks, and a rate-limit-aware pipeline supporting partner ROAS reporting"
+        "built loop, a NestJS + Next.js data platform replacing Funnel.io and Power BI across Shopify, Meta Ads, Google Ads, Google Sheets and GA4 — live in production",
+        "designed a sync engine with 28–60 day restatement windows, idempotent upserts and success-only cursors — stored totals reconcile with Meta and Shopify exactly",
+        "reached 169 Google Ads client accounts through one manager-account OAuth sign-in, with signed state, scope checks and country totals that always add up to campaign totals",
+        "diagnosed Meta's CPU-based rate limiting from usage headers, rebuilt syncs as batched per-entity requests, and reduced stored data 18x through correct-grain aggregation",
+        "integrated roasify with loop through a brand-scoped partner API, so it can automatically read ad data and Shopify metrics — 27/27 production integration checks passing",
+        "ran production and dev on one server with nginx, HTTPS and one-click GitHub Actions deploys that ship no secrets and fail on a bad health check"
       ],
       initiative: {
         name: "Loop",
-        label: "internal analytics platform",
-        description: "Shopify and Meta Ads reporting for a partner ROAS workflow"
+        label: "data platform + ai analyst",
+        description: "five ad and commerce sources, one reconciled model, a ceo dashboard, a roasify integration — and an ai layer next",
+        link: "/loop"
       }
     },
     {
@@ -88,7 +91,7 @@ const portfolioData = {
       url: "https://linkedin.com/in/aaroh-bhardwaj"
     }
   ],
-  skills: ["javascript", "typescript", "sql", "python", "go", "node.js", "nestjs", "fastify", "nextjs", "docker", "postgresql", "mongodb", "redis", "rabbitmq", "redis streams", "rag pipelines", "vector search", "llm orchestration"],
+  skills: ["javascript", "typescript", "sql", "python", "go", "node.js", "nestjs", "fastify", "nextjs", "docker", "postgresql", "mongodb", "redis", "rabbitmq", "redis streams", "rag pipelines", "vector search", "llm orchestration", "data pipelines", "oauth", "google ads api", "github actions", "nginx"],
   social: {
     twitter: "https://x.com/aarohcodes",
     linkedin: "https://linkedin.com/in/aaroh-bhardwaj",

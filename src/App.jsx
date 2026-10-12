@@ -8,9 +8,11 @@ import Education from './components/Education'
 import Newsletter from './components/Newsletter'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
+import LoopPage from './components/LoopPage'
 
 export default function App(){
   const [isDark, setIsDark] = useState(true)
+  const isLoopPage = window.location.pathname.replace(/\/$/, '') === '/loop'
 
   useEffect(() => {
     const saved = localStorage.getItem('theme')
@@ -25,6 +27,8 @@ export default function App(){
   }, [isDark])
 
   const toggleTheme = () => setIsDark(!isDark)
+
+  if (isLoopPage) return <LoopPage isDark={isDark} toggleTheme={toggleTheme} />
 
   return (
     <div id="top" className="site-root">

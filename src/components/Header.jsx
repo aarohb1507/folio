@@ -22,7 +22,7 @@ export default function Header({ name, resumeUrl, contact, isDark, toggleTheme }
         <div className="header-copy">
           <p className="eyebrow">backend systems / ai engineering</p>
           <h1 id="main-heading" className="heading-xl lowercase">{name}</h1>
-          <p className="hero-intro">hi, {firstName.toLowerCase()} here — i design APIs, data pipelines, and ai-backed systems that stay fast when real users show up.</p>
+          <p className="hero-intro">hi, {firstName.toLowerCase()} here — i design APIs, production data platforms, and ai-backed systems that stay fast when real users show up.</p>
           <div className="hero-links">
             {resumeUrl && (
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="text-link">

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ExperienceCard({ item }) {
   return (
-    <li className="experience-card">
+    <li className={`experience-card${item.initiative?.link ? ' experience-card-featured' : ''}`}>
       <div className="experience-stamp" aria-hidden="true">{item.logo}</div>
       <article className="experience-content">
         <header className="experience-header">
@@ -22,6 +22,7 @@ export default function ExperienceCard({ item }) {
           <div className="initiative">
             <p className="initiative-label">{item.initiative.label}</p>
             <p><strong>{item.initiative.name}</strong> — {item.initiative.description}</p>
+            {item.initiative.link && <a className="initiative-link" href={item.initiative.link}>read the case study <span aria-hidden="true">→</span></a>}
           </div>
         )}
 
