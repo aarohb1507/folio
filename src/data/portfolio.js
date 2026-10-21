@@ -35,7 +35,7 @@ const portfolioData = {
         name: "Loop",
         label: "data platform + ai analyst",
         description: "five ad and commerce sources, one reconciled model, a ceo dashboard, a roasify integration — and an ai layer next",
-        link: "/loop"
+        link: "/#loop"
       }
     },
     {

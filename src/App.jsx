@@ -10,9 +10,23 @@ import Skills from './components/Skills'
 import Footer from './components/Footer'
 import LoopPage from './components/LoopPage'
 
+function getIsLoopPage() {
+  return window.location.pathname.replace(/\/$/, '') === '/loop' || window.location.hash === '#loop'
+}
+
 export default function App(){
   const [isDark, setIsDark] = useState(true)
-  const isLoopPage = window.location.pathname.replace(/\/$/, '') === '/loop'
+  const [isLoopPage, setIsLoopPage] = useState(getIsLoopPage)
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const next = getIsLoopPage()
+      if (next) window.scrollTo(0, 0)
+      setIsLoopPage(next)
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
 
   useEffect(() => {
     const saved = localStorage.getItem('theme')
