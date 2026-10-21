@@ -198,6 +198,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .about-body .about-lead { color: var(--ink); font-size: 1.4rem; line-height: 1.45; }
 .about-body .text-link { margin-top: 0.4rem; }
 
+.heatmap { display: grid; grid-template-columns: minmax(135px, 0.25fr) minmax(0, 0.75fr); gap: 2rem; margin-top: clamp(3.5rem, 7vw, 5rem); padding-top: 2.5rem; border-top: 1px solid var(--line); }
+.heatmap-main { min-width: 0; }
+.heatmap-summary { margin: 0; color: var(--ink); font-size: 1rem; font-weight: 700; }
+.heatmap-scroll { margin-top: 1.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+.heatmap-body { min-width: calc(var(--weeks, 53) * 12px); }
+.heatmap-months, .heatmap-grid { display: grid; grid-template-columns: repeat(var(--weeks, 53), minmax(9px, 1fr)); gap: 3px; }
+.heatmap-months { height: 1.1rem; margin-bottom: 0.4rem; color: var(--muted); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; }
+.heatmap-months span { white-space: nowrap; }
+.heatmap-grid { grid-auto-flow: column; grid-template-rows: repeat(7, auto); }
+.heatmap-cell { display: block; aspect-ratio: 1; border-radius: 2px; background: var(--surface-raised); }
+.heatmap-cell.is-empty { background: transparent; }
+.heatmap-cell.level-1 { background: color-mix(in srgb, var(--accent) 24%, var(--surface-raised)); }
+.heatmap-cell.level-2 { background: color-mix(in srgb, var(--accent) 45%, var(--surface-raised)); }
+.heatmap-cell.level-3 { background: color-mix(in srgb, var(--accent) 70%, var(--surface-raised)); }
+.heatmap-cell.level-4 { background: var(--accent); }
+.heatmap-grid .heatmap-cell:not(.is-empty):hover { outline: 1px solid var(--ink-soft); outline-offset: 1px; }
+.heatmap-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.25rem; }
+.heatmap-legend { display: flex; align-items: center; gap: 4px; color: var(--muted); font-size: 0.66rem; }
+.heatmap-legend > span:not(.heatmap-cell) { margin: 0 0.2rem; }
+.heatmap-legend .heatmap-cell { width: 11px; }
+
 .experience-list { padding: 0; margin: 0; list-style: none; border-top: 1px solid var(--line); }
 
 .experience-card {
@@ -372,6 +393,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .experience-role { font-size: 2.15rem; }
   .hero-grid { gap: 2.25rem; padding-top: 5.5rem; }
   .section-heading, .about-layout { grid-template-columns: 1fr; gap: 1.1rem; }
+  .heatmap { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
   .section-heading { margin-bottom: 2.25rem; }
   .experience-card { grid-template-columns: 38px minmax(0, 1fr); gap: 0.8rem; }
   .experience-header { flex-direction: column; gap: 0.5rem; }

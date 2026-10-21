@@ -42,7 +42,7 @@ export default function App(){
         />
 
         <main>
-          <About about={portfolioData.about} />
+          <About about={portfolioData.about} githubUsername={portfolioData.githubUsername} githubUrl={portfolioData.social.github} />
           <Experience items={portfolioData.experience} />
           <Projects items={portfolioData.projects} />
           <Education items={portfolioData.education} />

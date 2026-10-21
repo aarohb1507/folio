@@ -3,6 +3,7 @@ const portfolioData = {
   initials: "AB",
   startYear: 2022,
   resumeUrl: "/Aaroh_s_resume.pdf",
+  githubUsername: "aarohb1507",
   contact: {
     location: "Bengaluru, Karnataka",
     email: "aarohb.1507@gmail.com"

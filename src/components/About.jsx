@@ -1,6 +1,7 @@
 import React from 'react'
+import ContributionHeatmap from './ContributionHeatmap'
 
-export default function About({ about }) {
+export default function About({ about, githubUsername, githubUrl }) {
   return (
     <section id="about" className="section about-section" aria-labelledby="about-heading">
       <div className="section-label"><span>01</span> about</div>
@@ -12,6 +13,7 @@ export default function About({ about }) {
           {about?.moreLink && <a className="text-link" href={about.moreLink}>more of what i think <span aria-hidden="true">↗</span></a>}
         </div>
       </div>
+      {githubUsername && <ContributionHeatmap username={githubUsername} profileUrl={githubUrl} />}
     </section>
   )
 }
