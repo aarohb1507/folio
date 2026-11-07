@@ -28,6 +28,8 @@ const shipped = [
   'a Power BI checker that read "1.2K", "13.02L" and "1.3Cr" and marked each figure match / close / off — retired once the reports agreed'
 ]
 
+const stack = ['NestJS', 'Node 22', 'MongoDB Atlas', 'Mongoose', 'Next.js 15', 'React', 'TypeScript', 'Shopify Admin + ShopifyQL', 'Meta Marketing API', 'Google Ads API (GAQL)', 'Sheets API', 'GA4 Data API', 'nginx', 'pm2', 'GitHub Actions']
+
 function ArchitectureDiagram() {
   return (
     <div className="loop-diagram" role="img" aria-label="Loop architecture: five data sources flow through a per-brand sync engine into MongoDB, then into the CEO dashboard, the ROASify integration and Ask GMS">
@@ -117,7 +119,7 @@ export default function LoopPage({ isDark, toggleTheme }) {
             <div className="loop-copy"><h2>ask gms, the ai analyst.</h2><p>analysts and the ceo ask plain-English questions — which campaigns spend without selling? where is checkout drop-off vs last month? which countries return the most orders?</p><p>the answers will be grounded in loop's reconciled data and metric definitions instead of model guesses. the spec has 34 real analyst questions; version 1 covers six overall-performance questions across month-on-month, week-on-week, country, region, month-to-date and daily views.</p></div>
           </section>
 
-          <p className="loop-stack"><span>stack</span> NestJS · Node 22 · MongoDB Atlas · Mongoose · Next.js 15 · React · TypeScript · Shopify Admin + ShopifyQL · Meta Marketing API · Google Ads API (GAQL) · Sheets API · GA4 Data API · nginx · pm2 · GitHub Actions</p>
+          <div className="loop-stack"><span>stack</span><ul className="tag-list">{stack.map((tech) => <li className="tag" key={tech}>{tech}</li>)}</ul></div>
         </main>
       </div>
     </div>

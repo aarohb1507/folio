@@ -27,7 +27,7 @@ export default function Projects({ items = [] }) {
               <div className="project-meta"><span>personal build</span><time>{project.dates}</time></div>
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{project.description}</p>
-              <p className="project-tech">{project.tech}</p>
+              <ul className="tag-list" aria-label="Tech stack">{project.tech.split(', ').map((tech) => <li className="tag" key={tech}>{tech}</li>)}</ul>
               {(project.liveUrl || project.url) && (
                 <div className="project-actions">
                   {project.liveUrl && <a className="text-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">view demo <Arrow /></a>}

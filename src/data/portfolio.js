@@ -71,12 +71,17 @@ const portfolioData = {
       company: "Phyniks Dreamlabs LLP",
       logo: "P",
       url: "https://phyniks.com",
-      role: "full stack developer intern",
-      type: "internship",
       dates: "september 2025 - january 2026",
-      highlights: [
-        "built scalable NestJS backends with DTO validation, guards, query optimization, and Redis caching",
-        "developed SSR Next.js admin dashboards with sub-200ms TTFB"
+      roles: [
+        {
+          role: "full stack developer intern",
+          type: "internship",
+          dates: "september 2025 - january 2026",
+          highlights: [
+            "built scalable NestJS backends with DTO validation, guards, query optimization, and Redis caching",
+            "developed SSR Next.js admin dashboards with sub-200ms TTFB"
+          ]
+        }
       ]
     }
   ],

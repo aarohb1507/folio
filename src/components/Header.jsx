@@ -38,8 +38,8 @@ export default function Header({ name, resumeUrl, contact, isDark, toggleTheme }
         </div>
 
         <aside className="hero-note" aria-label="Current role">
-          <p className="eyebrow">currently</p>
-          <p className="hero-note-title">ai engineer intern<br />at growify digital</p>
+          <p className="eyebrow status">currently</p>
+          <p className="hero-note-title">associate ai engineer<br />at growify digital</p>
           <p className="hero-note-meta">NestJS / MongoDB / marketing analytics<br />{contact?.location}</p>
         </aside>
       </div>
