@@ -151,8 +151,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .heading-xl {
   max-width: 850px;
   margin-top: 0.7rem;
-  font-size: 6.9rem;
-  line-height: 0.86;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  line-height: 0.9;
 }
 
 .hero-intro {
@@ -413,7 +413,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .site-root { padding: 0 1rem; }
   .topbar { min-height: 65px; }
   .site-nav { display: none; }
-  .heading-xl { font-size: 3.8rem; }
+  .heading-xl { font-size: 2.9rem; }
   .section-title { font-size: 2.65rem; }
   .contact-title { font-size: 3rem; }
   .experience-role { font-size: 2.15rem; }
