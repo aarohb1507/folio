@@ -291,11 +291,12 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 
 .initiative { max-width: 680px; margin-top: 1.35rem; padding: 0.8rem 0 0.8rem 1rem; border-left: 2px solid var(--accent); background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent); }
 .initiative-label { margin: 0 0 0.35rem; color: var(--accent); }
-.initiative p:last-child { margin: 0; color: var(--ink-soft); font-size: 0.87rem; line-height: 1.55; }
+.initiative-label + p { margin: 0; color: var(--ink-soft); font-size: 0.87rem; line-height: 1.55; }
 .initiative strong { color: var(--ink); font-weight: 700; }
-.initiative-link { display: inline-flex; gap: 0.35rem; margin-top: 0.8rem; color: var(--ink); font-size: 0.76rem; font-weight: 750; text-decoration: none; }
-.initiative-link span { color: var(--accent); transition: transform 160ms ease; }
-.initiative-link:hover span { transform: translateX(3px); }
+.initiative-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 1rem 1rem 0 0; padding-top: 0.85rem; border-top: 1px solid color-mix(in srgb, var(--accent) 22%, transparent); }
+.initiative-metrics div { min-width: 0; }
+.initiative-metrics dt { color: var(--accent); font-family: ui-serif, Georgia, serif; font-size: 1.65rem; line-height: 1; }
+.initiative-metrics dd { margin: 0.4rem 0 0; color: var(--muted); font-family: var(--mono); font-size: 0.64rem; line-height: 1.35; }
 
 .experience-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem 2.25rem; max-width: 860px; padding: 0; margin: 1.6rem 0 0; list-style: none; counter-reset: highlight; }
 .experience-highlights li { position: relative; padding-left: 1.65rem; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.58; counter-increment: highlight; }
@@ -354,6 +355,18 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 
 .site-footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.8rem 0 0.5rem; color: var(--muted); font-family: var(--mono); font-size: 0.7rem; }
 .site-footer p { margin: 0; }
+.has-dock { padding-bottom: 5.5rem; }
+
+.dock { position: fixed; left: 50%; bottom: 1.1rem; z-index: 20; overflow: hidden; padding: 0.4rem; border: 1px solid var(--line-strong); border-radius: 999px; background: color-mix(in srgb, var(--canvas) 82%, transparent); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28); opacity: 0; pointer-events: none; transform: translate(-50%, 1.25rem); transition: opacity 220ms ease, transform 220ms ease; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.dock.is-visible { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+.dock-progress { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--accent); transform-origin: left; }
+.dock ol { display: flex; align-items: center; gap: 0.15rem; padding: 0; margin: 0; list-style: none; }
+.dock-item { display: flex; align-items: center; gap: 0.45rem; padding: 0.5rem 0.8rem; border-radius: 999px; color: var(--muted); font-family: var(--mono); font-size: 0.68rem; text-decoration: none; transition: color 160ms ease, background 160ms ease, transform 180ms cubic-bezier(.2,.7,.2,1); }
+.dock-item:hover { color: var(--ink); background: var(--surface-raised); transform: translateY(-3px) scale(1.06); }
+.dock-item.is-active { color: var(--canvas); background: var(--accent); }
+.dock-dot { width: 6px; height: 6px; flex: 0 0 auto; border: 1px solid currentColor; border-radius: 50%; }
+.dock-item.is-active .dock-dot { background: currentColor; }
+
 .footer-links { gap: 1.1rem; }
 .footer-links a { color: var(--muted); text-decoration: none; }
 .footer-links a:hover { color: var(--ink); }
@@ -432,6 +445,12 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .education-item time { grid-column: 2; }
   .contact-section { margin-left: -1rem; margin-right: -1rem; padding: 2.75rem 1rem; }
   .site-footer { flex-direction: column; padding-bottom: 1rem; }
+  .initiative-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dock { bottom: 0.75rem; max-width: calc(100vw - 1.5rem); }
+  .dock-item { padding: 0.55rem; }
+  .dock-item .dock-label { display: none; }
+  .dock-item.is-active { padding: 0.45rem 0.75rem; }
+  .dock-item.is-active .dock-label { display: inline; }
   .loop-back { display: none; }
   .loop-hero { padding-top: 4rem; }
   .loop-numbers { grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }

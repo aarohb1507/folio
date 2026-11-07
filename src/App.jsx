@@ -9,6 +9,7 @@ import Newsletter from './components/Newsletter'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
 import LoopPage from './components/LoopPage'
+import Dock from './components/Dock'
 
 function getIsLoopPage() {
   return window.location.pathname.replace(/\/$/, '') === '/loop' || window.location.hash === '#loop'
@@ -45,7 +46,7 @@ export default function App(){
   if (isLoopPage) return <LoopPage isDark={isDark} toggleTheme={toggleTheme} />
 
   return (
-    <div id="top" className="site-root">
+    <div id="top" className="site-root has-dock">
       <div className="container">
         <Header
           name={portfolioData.name}
@@ -66,6 +67,7 @@ export default function App(){
 
         <Footer social={portfolioData.social} />
       </div>
+      <Dock />
     </div>
   )
 }

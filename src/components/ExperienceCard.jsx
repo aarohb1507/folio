@@ -22,7 +22,11 @@ function RoleDetails({ item }) {
         <div className="initiative">
           <p className="initiative-label">{item.initiative.label}</p>
           <p><strong>{item.initiative.name}</strong> — {item.initiative.description}</p>
-          {item.initiative.link && <a className="initiative-link" href={item.initiative.link}>read the case study <span aria-hidden="true">→</span></a>}
+          {item.initiative.metrics && (
+            <dl className="initiative-metrics">
+              {item.initiative.metrics.map(([value, label]) => <div key={label}><dt>{value}</dt><dd>{label}</dd></div>)}
+            </dl>
+          )}
         </div>
       )}
 
@@ -35,11 +39,11 @@ function RoleDetails({ item }) {
   )
 }
 
-const hasLink = (entry) => Boolean(entry.initiative?.link || entry.groups?.some(hasLink))
+const hasInitiative = (entry) => Boolean(entry.initiative || entry.groups?.some(hasInitiative))
 
 export default function ExperienceCard({ item }) {
   const roles = item.roles ?? [item]
-  const featured = roles.some(hasLink)
+  const featured = roles.some(hasInitiative)
 
   return (
     <li className={`experience-card${featured ? ' experience-card-featured' : ''}`}>

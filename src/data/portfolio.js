@@ -46,14 +46,25 @@ const portfolioData = {
                 name: "Loop",
                 label: "data platform + ai analyst",
                 description: "five ad and commerce sources, one reconciled model, a ceo dashboard, a roasify integration — and an ai layer next",
-                link: "/#loop"
+                metrics: [
+                  ["5", "data sources"],
+                  ["169", "ad accounts, one sign-in"],
+                  ["0", "mismatch vs source totals"],
+                  ["27/27", "partner api checks"]
+                ]
               }
             },
             {
               initiative: {
                 name: "Stitch",
                 label: "internal crm",
-                description: "turns WhatsApp leads for fashion brands into tracked orders, from first chat to delivery"
+                description: "turns WhatsApp leads for fashion brands into tracked orders, from first chat to delivery",
+                metrics: [
+                  ["27", "collections"],
+                  ["~90", "endpoints"],
+                  ["~66", "integration tests"],
+                  ["33", "commits in 3 weeks"]
+                ]
               },
               highlights: [
                 "rebuilt stitch from a SQLite prototype: 27 MongoDB collections and ~90 REST endpoints in Node, Express and Mongoose — 33 commits, 7 milestones in one sprint",
