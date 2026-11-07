@@ -37,7 +37,7 @@ const portfolioData = {
                 "built loop, a NestJS + Next.js data platform replacing Funnel.io and Power BI across Shopify, Meta Ads, Google Ads, Google Sheets and GA4 — live in production",
                 "designed a sync engine with 28–60 day restatement windows, idempotent upserts and success-only cursors — stored totals reconcile with Meta and Shopify exactly",
                 "reached 169 Google Ads client accounts through one manager-account OAuth sign-in, with signed state, scope checks and country totals that always add up to campaign totals",
-                "diagnosed Meta's CPU-based rate limiting from usage headers, rebuilt syncs as batched per-entity requests, and reduced stored data 18x through correct-grain aggregation",
+                "diagnosed Meta's CPU-based rate limiting from usage headers, rebuilt syncs as batched per-entity requests, and migrated 146K+ Meta rows to a 4.5x smaller schema with zero downtime",
                 "integrated roasify with loop through a brand-scoped partner API, so it can automatically read ad data and Shopify metrics — 27/27 production integration checks passing",
                 "ran production and dev on one server with nginx, HTTPS and one-click GitHub Actions deploys that ship no secrets and fail on a bad health check",
                 "built the ceo dashboard's design system and charts in Next.js, with demo brands (sample data no sync touches) for demos and the Shopify review"

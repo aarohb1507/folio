@@ -5,9 +5,9 @@ const numbers = [
   ['5', 'data sources'],
   ['169', 'ad accounts, one sign-in'],
   ['0', 'mismatch vs source totals'],
-  ['18x', 'less stored data'],
+  ['4.5x', 'smaller schema'],
   ['27/27', 'partner api checks'],
-  ['105', 'commits in 7 weeks']
+  ['213', 'commits in 10 weeks']
 ]
 
 const problems = [
