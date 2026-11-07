@@ -20,23 +20,52 @@ const portfolioData = {
     {
       company: "Growify Digital",
       logo: "G",
-      role: "ai engineer intern",
-      type: "internship",
       dates: "august 2026 - present",
-      highlights: [
-        "built loop, a NestJS + Next.js data platform replacing Funnel.io and Power BI across Shopify, Meta Ads, Google Ads, Google Sheets and GA4 — live in production",
-        "designed a sync engine with 28–60 day restatement windows, idempotent upserts and success-only cursors — stored totals reconcile with Meta and Shopify exactly",
-        "reached 169 Google Ads client accounts through one manager-account OAuth sign-in, with signed state, scope checks and country totals that always add up to campaign totals",
-        "diagnosed Meta's CPU-based rate limiting from usage headers, rebuilt syncs as batched per-entity requests, and reduced stored data 18x through correct-grain aggregation",
-        "integrated roasify with loop through a brand-scoped partner API, so it can automatically read ad data and Shopify metrics — 27/27 production integration checks passing",
-        "ran production and dev on one server with nginx, HTTPS and one-click GitHub Actions deploys that ship no secrets and fail on a bad health check"
-      ],
-      initiative: {
-        name: "Loop",
-        label: "data platform + ai analyst",
-        description: "five ad and commerce sources, one reconciled model, a ceo dashboard, a roasify integration — and an ai layer next",
-        link: "/#loop"
-      }
+      roles: [
+        {
+          role: "associate ai engineer",
+          type: "full-time",
+          dates: "november 2026 - present"
+        },
+        {
+          role: "ai engineer intern",
+          type: "internship · remote",
+          dates: "august 2026 - november 2026",
+          groups: [
+            {
+              highlights: [
+                "built loop, a NestJS + Next.js data platform replacing Funnel.io and Power BI across Shopify, Meta Ads, Google Ads, Google Sheets and GA4 — live in production",
+                "designed a sync engine with 28–60 day restatement windows, idempotent upserts and success-only cursors — stored totals reconcile with Meta and Shopify exactly",
+                "reached 169 Google Ads client accounts through one manager-account OAuth sign-in, with signed state, scope checks and country totals that always add up to campaign totals",
+                "diagnosed Meta's CPU-based rate limiting from usage headers, rebuilt syncs as batched per-entity requests, and reduced stored data 18x through correct-grain aggregation",
+                "integrated roasify with loop through a brand-scoped partner API, so it can automatically read ad data and Shopify metrics — 27/27 production integration checks passing",
+                "ran production and dev on one server with nginx, HTTPS and one-click GitHub Actions deploys that ship no secrets and fail on a bad health check",
+                "built the ceo dashboard's design system and charts in Next.js, with demo brands (sample data no sync touches) for demos and the Shopify review"
+              ],
+              initiative: {
+                name: "Loop",
+                label: "data platform + ai analyst",
+                description: "five ad and commerce sources, one reconciled model, a ceo dashboard, a roasify integration — and an ai layer next",
+                link: "/#loop"
+              }
+            },
+            {
+              initiative: {
+                name: "Stitch",
+                label: "internal crm",
+                description: "turns WhatsApp leads for fashion brands into tracked orders, from first chat to delivery"
+              },
+              highlights: [
+                "rebuilt stitch from a SQLite prototype: 27 MongoDB collections and ~90 REST endpoints in Node, Express and Mongoose — 33 commits, 7 milestones in one sprint",
+                "multi-tenant role-based access with 5 roles, and per-brand setup without code changes: custom sales stages and custom fields",
+                "built a gaps-and-gates engine that blocks 6 money and delivery steps — no order without the advance, no dispatch before full payment — with every override logged",
+                "lead → order in one database transaction, with a payments ledger, versioned measurements with customer sign-off, a dispatch view, signed webhooks and a full audit log — ~66 tests, 15 review fixes",
+                "prepared the cloud deployment: a Render blueprint for the API, MongoDB Atlas with transactions, and the React app on Vercel"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       company: "Phyniks Dreamlabs LLP",

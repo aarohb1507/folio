@@ -265,6 +265,13 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .experience-type { display: inline-flex; align-items: center; gap: 0.45rem; margin: 0.55rem 0 0; color: var(--accent-2); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 .experience-type::before { width: 0.45rem; height: 0.45rem; border: 1px solid currentColor; border-radius: 50%; content: ""; }
 .experience-dates { flex: 0 0 auto; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.experience-company-lead { margin: 0; color: var(--ink); font-size: 1.35rem; }
+.experience-roles { padding: 0; margin: 1.6rem 0 0; list-style: none; }
+.experience-role-item { position: relative; padding: 0 0 2.2rem 1.6rem; border-left: 1px solid var(--line-strong); }
+.experience-role-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+.experience-role-item::before { position: absolute; left: -5px; top: 0.55rem; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); content: ""; }
+.experience-role-item .experience-role { font-size: 2rem; }
+.experience-group + .experience-group { margin-top: 2.4rem; }
 
 .initiative { max-width: 680px; margin-top: 1.35rem; padding: 0.8rem 0 0.8rem 1rem; border-left: 2px solid var(--accent); background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent); }
 .initiative-label { margin: 0 0 0.35rem; color: var(--accent); }
@@ -365,7 +372,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
 .diagram-next { stroke: var(--accent-2) !important; stroke-dasharray: 5 4; }
 .problem-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--line); background: var(--line); }
 .problem-card { min-width: 0; padding: 1.35rem; background: var(--canvas); }
-.problem-card:last-child { grid-column: span 2; }
+.problem-card:last-child:nth-child(odd) { grid-column: span 2; }
 .problem-index { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.68rem; font-weight: 800; }
 .problem-card h2 { margin: 1.4rem 0 1rem; font-family: ui-serif, Georgia, serif; font-size: 1.5rem; font-weight: 500; line-height: 1; }
 .problem-card p { margin: 0.65rem 0 0; color: var(--ink-soft); font-size: 0.84rem; line-height: 1.6; }
@@ -391,6 +398,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .section-title { font-size: 2.65rem; }
   .contact-title { font-size: 3rem; }
   .experience-role { font-size: 2.15rem; }
+  .experience-role-item .experience-role { font-size: 1.6rem; }
   .hero-grid { gap: 2.25rem; padding-top: 5.5rem; }
   .section-heading, .about-layout { grid-template-columns: 1fr; gap: 1.1rem; }
   .heatmap { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
@@ -410,7 +418,7 @@ a.experience-company:hover { text-decoration: underline; text-decoration-color: 
   .loop-numbers { grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
   .loop-section { grid-template-columns: 1fr; gap: 1.1rem; }
   .problem-grid { grid-template-columns: 1fr; }
-  .problem-card:last-child { grid-column: auto; }
+  .problem-card:last-child:nth-child(odd) { grid-column: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {

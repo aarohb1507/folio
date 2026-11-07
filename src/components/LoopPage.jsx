@@ -15,7 +15,17 @@ const problems = [
   ['meta counts every purchase three times', 'the mapper picks one conversion by priority across pixel, omni and plain purchase. reach is never summed across days.', 'revenue is counted once and non-additive reach stays correct.'],
   ['never lose data quietly', 'writes use platform ids, stable composite keys and sha256 sheet fingerprints. reconciliation blocks mass deletion, and upstream order deletes are audited daily.', 'a shrinking sheet or destructive sync cannot silently erase history.'],
   ['multi-brand without copying secrets', 'brands stay separate from per-source connections. shared credentials are stored once and referenced; umbrellas roll up all, domestic or international.', 'one system supports multiple brands without duplicated secrets.'],
-  ['one number, everywhere', 'every dashboard figure comes from one day × country series. ratios come from totals, never averages of averages.', 'target pacing matched the old Power BI report on every figure.']
+  ['one number, everywhere', 'every dashboard figure comes from one day × country series. ratios come from totals, never averages of averages.', 'target pacing matched the old Power BI report on every figure.'],
+  ['the old report was wrong', "checking loop against Power BI figure by figure turned up four errors in Power BI itself: cpm averaged across days (133 shown, 114.5 from its own totals), 'infinity' and summed ratios in the monthly table, one bad gross month (roi 45.5 against ~9 elsewhere), and an 'age' chart showing gender.", 'loop works every ratio out from totals, so it shows the right number and says why it differs.']
+]
+
+const shipped = [
+  "sales read from Shopify's own sales report (ShopifyQL), matching Shopify to the rupee, plus visitors and sessions the REST API doesn't expose",
+  'roasify fed automatically instead of two manual file exports; Meta spend mapped to Shopify products, with only 0.7% of spend unmatched — kept visible, never dropped',
+  'order data done properly: refunds tied to the line item they undo, cancelled orders excluded, in-store sales kept separate',
+  'privacy by default: gdpr deletion webhooks, no customer emails stored, sign-in lockout after 10 wrong tries',
+  "Google Ads: 19 of the analysts' 23 fields, plus keywords and search terms",
+  'a Power BI checker that read "1.2K", "13.02L" and "1.3Cr" and marked each figure match / close / off — retired once the reports agreed'
 ]
 
 function ArchitectureDiagram() {
@@ -94,7 +104,7 @@ export default function LoopPage({ isDark, toggleTheme }) {
 
           <section className="loop-section">
             <div className="loop-section-label">04 / what shipped</div>
-            <div className="loop-copy"><p>a ceo dashboard built from the ceo's own prototype: kpis, target pacing, channel roas, a region heat map, cohort-style tables and csv export.</p><p>monthly targets come from Google Sheets every 12 hours with a full change log. it includes Indian financial-year quarters, blended cac, and my roasify integration: it reads automated ad data and Shopify metrics from loop through brand-scoped access.</p></div>
+            <div className="loop-copy"><p>a ceo dashboard built from the ceo's own prototype: kpis, target pacing, channel roas, a region heat map, cohort-style tables and csv export.</p><p>monthly targets come from Google Sheets every 12 hours with a full change log. it includes Indian financial-year quarters, blended cac, and my roasify integration: it reads automated ad data and Shopify metrics from loop through brand-scoped access.</p><ul className="experience-highlights">{shipped.map((item) => <li key={item}>{item}</li>)}</ul></div>
           </section>
 
           <section className="loop-section">
